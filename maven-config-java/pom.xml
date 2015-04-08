@@ -7,64 +7,20 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-        <!-- <modules>
-          <module>../target-platform</module>
-          <module>../../common</module>
-          <module>../../cleardep</module>
-
-          <module>../../stdlib</module>
-          <module>../../compiler</module>
-          <module>../../base-lang</module>
-          <module>../../editor</module>
-
-          <module>../../languages/java</module>
-          <module>../../languages/haskell</module>
-          <module>../../languages/prolog</module>
-          <module>../../languages/fomega</module>
-          <module>../../languages/javascript/language-libraries/javascript</module>
-          <module>../../languages/scala</module>
-          <module>../../languages/dryad/languages/dryad</module>
-
-          <module>../feature-base</module>
-          <module>../feature-editor</module>
-          <module>../feature-java</module>
-          <module>../feature-haskell</module>
-          <module>../feature-prolog</module>
-          <module>../feature-fomega</module>
-          <module>../feature-javascript</module>
-          <module>../feature-scala</module>
-          <module>../feature-dryad</module>
-
-          <module>../update-site</module>
-
-          <module>../../test-java</module>
-		  <module>../../case-studies/pairs</module>
-		  <module>../../case-studies/closures</module>
-		  <module>../../case-studies/xml</module>
-		  <module>../../case-studies/questionnaire-language</module>
-		  <module>../../case-studies/string-interpolation</module>
-		  <module>../../case-studies/case-classes</module>
-        </modules> -->
+  <parent>
+    <groupId>org.sugarj</groupId>
+    <artifactId>maven-config-common</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../maven-config-common</relativePath>
+  </parent>
+  
 
 	<properties>
-		<java.source.version>1.7</java.source.version>
-		<java.binary.version>1.7</java.binary.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
 		<manifest-location>META-INF</manifest-location>
-    <forceContextQualifier>qualifier</forceContextQualifier>
+		<forceContextQualifier>qualifier</forceContextQualifier>
 	</properties>
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
-		
-		<resources>
-			<resource>
-				<directory>src</directory>
-				<excludes><exclude>**/*.java</exclude></excludes>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -83,14 +39,15 @@
 			</plugin>
 
 
-      <!--  copied from https://github.com/metaborg/mb-rep/blob/master/org.spoofax.terms/pom.xml -->
-			<!-- Generate MANIFEST.MF from project, to make project available to Eclipse plugins. -->
+			<!-- copied from https://github.com/metaborg/mb-rep/blob/master/org.spoofax.terms/pom.xml -->
+			<!-- Generate MANIFEST.MF from project, to make project available to Eclipse 
+				plugins. -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<version>2.5.3</version>
 				<configuration>
-				  <manifestLocation>${manifest-location}</manifestLocation>
+					<manifestLocation>${manifest-location}</manifestLocation>
 					<instructions>
 						<!-- Fix names not to include the groupId. -->
 						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
@@ -123,8 +80,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			<!--  copied from https://github.com/metaborg/mb-rep/blob/master/org.spoofax.terms/pom.xml -->
+
+			<!-- copied from https://github.com/metaborg/mb-rep/blob/master/org.spoofax.terms/pom.xml -->
 			<!-- Add the generated MANIFEST.MF is used in the resulting JAR file. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -138,39 +95,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-	<repositories>
-		<repository>
-			<id>metaborg-nexus-snapshots</id>
-			<url>http://artifacts.metaborg.org/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>metaborg-nexus-releases</id>
-			<url>http://artifacts.metaborg.org/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spoofax-nightly</id>
-			<url>http://download.spoofax.org/update/nightly/</url>
-			<layout>p2</layout>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 </project>
