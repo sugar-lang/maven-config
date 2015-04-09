@@ -52,7 +52,7 @@
 				<version>0.11</version>
 				<configuration>
 					<message>Deploy maven artifact ${project.groupId}:${project.artifactId} version ${project.version}</message>
-					<repositoryName>sugar-lang.github.io</repositoryName>
+					<repositoryName>${maven-deploy-github-owner}.github.io</repositoryName>
 					<repositoryOwner>${maven-deploy-github-owner}</repositoryOwner>
 					<oauth2Token>${env.GITHUB_OAUTH_TOKEN}</oauth2Token>
 					<branch>refs/heads/master</branch>
