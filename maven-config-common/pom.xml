@@ -36,11 +36,11 @@
 				</excludes>
 			</resource>
 			<resource>
-        <directory>test</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
+				<directory>test</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
 		</resources>
 
 		<plugins>
@@ -58,7 +58,9 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.11</version>
 				<configuration>
-					<message>Deploy maven artifact ${project.groupId}:${project.artifactId} version ${project.version}</message>
+					<message>Deploy maven artifact
+						${project.groupId}:${project.artifactId} version
+						${project.version}</message>
 					<repositoryName>${maven-deploy-github-owner}.github.io</repositoryName>
 					<repositoryOwner>${maven-deploy-github-owner}</repositoryOwner>
 					<oauth2Token>${env.GITHUB_OAUTH_TOKEN}</oauth2Token>
@@ -85,19 +87,9 @@
 
 
 	<repositories>
-	  <repository>
-      <id>sugar-lang</id>
-      <url>http://sugar-lang.github.io/mvnrepository/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
 		<repository>
-			<id>metaborg-nexus-snapshots</id>
-			<url>http://artifacts.metaborg.org/content/repositories/snapshots/</url>
+			<id>sugar-lang</id>
+			<url>http://sugar-lang.github.io/mvnrepository/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -105,9 +97,15 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<!-- <repository> <id>metaborg-nexus-snapshots</id> <url>http://artifacts.metaborg.org/content/repositories/snapshots/</url> 
+			<releases> <enabled>false</enabled> </releases> <snapshots> <enabled>true</enabled> 
+			</snapshots> </repository> <repository> <id>metaborg-nexus-releases</id> 
+			<url>http://artifacts.metaborg.org/content/repositories/releases/</url> <releases> 
+			<enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
+			</snapshots> </repository> -->
 		<repository>
-			<id>metaborg-nexus-releases</id>
-			<url>http://artifacts.metaborg.org/content/repositories/releases/</url>
+			<id>metaborg-nexus-releases-replacement</id>
+			<url>http://download.spoofax.org/update/artifacts/releases/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
