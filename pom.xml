@@ -10,8 +10,8 @@
         <modules>
           <module>maven-config-common</module>
           <module>maven-config-java</module>
-          <module>maven-config-java-bundle</module>
-          <module>maven-config-eclipse</module>
+          <!-- <module>maven-config-java-bundle</module> -->
+          <!-- <module>maven-config-eclipse</module> -->
 
 	  <!-- skip old parent with its submodules for now -->
           <!--<module>maven-config</module>-->
