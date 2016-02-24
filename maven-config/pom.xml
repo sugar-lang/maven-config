@@ -8,10 +8,10 @@
 	<packaging>pom</packaging>
 
         <modules>
-          <module>../target-platform</module>
+          <module>../../deployment/target-platform</module>
           <module>../../common</module>
 				  <module>../../cleardep</module>
-				  <module>../../cleardep.test</module>
+				  <!-- <module>../../cleardep.test</module> -->
           <module>../../stdlib</module>
           <module>../../compiler</module>
           <module>../../base-lang</module>
@@ -25,17 +25,17 @@
           <module>../../languages/scala</module>
           <!-- <module>../../languages/dryad/languages/dryad</module> -->
 
-          <module>../feature-base</module>
-          <module>../feature-editor</module>
-          <module>../feature-java</module>
-          <module>../feature-haskell</module>
-          <module>../feature-prolog</module>
-          <module>../feature-fomega</module>
-          <module>../feature-javascript</module>
-          <module>../feature-scala</module>
-          <!-- <module>../feature-dryad</module> -->
+          <module>../../deployment/feature-base</module>
+          <module>../../deployment/feature-editor</module>
+          <module>../../deployment/feature-java</module>
+          <module>../../deployment/feature-haskell</module>
+          <module>../../deployment/feature-prolog</module>
+          <module>../../deployment/feature-fomega</module>
+          <module>../../deployment/feature-javascript</module>
+          <module>../../deployment/feature-scala</module>
+          <!-- <module>../../deployment/feature-dryad</module> -->
 
-          <module>../update-site</module>
+          <module>../../deployment/update-site</module>
 		  
           <module>../../test-java</module>
 		  <module>../../case-studies/pairs</module>
