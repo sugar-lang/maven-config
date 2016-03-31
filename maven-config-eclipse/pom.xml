@@ -108,17 +108,17 @@
 			<id>eclipse-luna</id>
 			<layout>p2</layout>
 			<url>http://eclipse.mirror.triple-it.nl/releases/luna/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
 		</repository>
-		<repository>
-      <id>spoofax-nightly</id>
-      <url>http://download.spoofax.org/update/nightly/</url>
+	<repository>
+      <id>spoofax-stable</id>
+      <url>http://download.spoofax.org/update/stable/</url>
       <layout>p2</layout>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
     </repository>
 	</repositories>
 
